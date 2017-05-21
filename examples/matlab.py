@@ -17,14 +17,14 @@ samples = 5000
 net = pyr.mlab.load("examples")
 T = np.random.uniform(size=(samples, 2), low=-1.0, high=1.0)
 
-print "Running..."
+print("Running...")
 D = net.sim(T).flatten()
-print "Done."
+print("Done.")
 
 IN = T[D >= 0.5]
 OUT = T[D < 0.5]
 
-print "Plotting...",
+print("Plotting... ", end='')
 plt.plot(IN[:,0], IN[:,1], 'r*', OUT[:,0], OUT[:,1], 'bo')
-print "Done.\nClose the plot window to exit."
+print("Done.\nClose the plot window to exit.")
 plt.show()
