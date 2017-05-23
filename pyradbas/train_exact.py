@@ -3,6 +3,7 @@
 # Date:    24/10/2011
 # E-mail:  stefanobrilli@gmail.com
 
+from __future__ import print_function
 from pyradbas.rbfn import Rbfn
 import numpy as np
 import numpy.linalg as la

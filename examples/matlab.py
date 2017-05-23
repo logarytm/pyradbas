@@ -9,12 +9,13 @@
 # is 1 if the training point is inside the ring of minimum and maximum radius
 # respectively of 0.2 and 0.5. Otherwise is 0
 
-import pyradbas as pyr
+from __future__ import print_function
+import pyradbas as pyrb
 import numpy as np
 import matplotlib.pyplot as plt
 
 samples = 5000
-net = pyr.mlab.load("examples")
+net = pyrb.mlab.load("examples")
 T = np.random.uniform(size=(samples, 2), low=-1.0, high=1.0)
 
 print("Running...")
