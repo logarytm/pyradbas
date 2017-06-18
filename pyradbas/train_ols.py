@@ -8,7 +8,7 @@ from pyradbas.rbfn import Rbfn
 import numpy as np
 import numpy.linalg as la
 
-def train_ols(I, O, mse, gw=1.0, verbose=False, me=None):
+def train_ols(I, O, mse, gw=1.0, verbose=False, mn=None):
     """
     Build a rbfn
     I (N by M) N vector of M size
@@ -30,9 +30,9 @@ def train_ols(I, O, mse, gw=1.0, verbose=False, me=None):
     G1 = G[:, used]
     t, r, _, _ = la.lstsq(G1, O)
     err = r.sum()/d
-    if me is None:
-        me = I.shape[0]
-    while err > mse and P.shape[1] > 0 and used.shape[0] < me:
+    if mn is None:
+        mn = I.shape[0]
+    while err > mse and P.shape[1] > 0 and used.shape[0] < mn:
         if verbose:
             print(err, m-P.shape[1])
         wj = W[:, -1:]
